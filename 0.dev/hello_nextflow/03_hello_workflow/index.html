@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/img/nextflow-icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.10">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -255,17 +255,25 @@
             </a>
           </li>
         
+          <li class="md-select__item">
+            <a href="../../it/hello_nextflow/03_hello_workflow/" hreflang="it" class="md-select__link">
+              Italiano
+            </a>
+          </li>
+        
       </ul>
     </div>
   </div>
 </div>
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -302,6 +310,7 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
@@ -482,6 +491,29 @@
   
   <span class="md-ellipsis">
     Local installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../envsetup/03_devcontainer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Local installation using VSCode Devcontainers extension
     
   </span>
   
@@ -3457,46 +3489,58 @@ However, we do recommend you be kind to your collaborators and to your future se
 <h3 id="12-add-a-call-to-the-new-process-in-the-workflow-block">1.2. Add a call to the new process in the workflow block<a class="headerlink" href="#12-add-a-call-to-the-new-process-in-the-workflow-block" title="Permanent link">&para;</a></h3>
 <p>Now we need to tell Nextflow to actually call the process that we just defined.</p>
 <p>In the workflow block, make the following code change:</p>
-<p><em>Before:</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">After</label><label for="__tabbed_1_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-53">53</a></span>
 <span class="normal"><a href="#__codelineno-7-54">54</a></span>
-<span class="normal"><a href="#__codelineno-7-55">55</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-53" name="__codelineno-7-53"></a><span class="w">    </span><span class="c1">// emit a greeting</span>
+<span class="normal"><a href="#__codelineno-7-55">55</a></span>
+<span class="normal"><a href="#__codelineno-7-56">56</a></span>
+<span class="normal"><a href="#__codelineno-7-57">57</a></span>
+<span class="normal"><a href="#__codelineno-7-58">58</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-53" name="__codelineno-7-53"></a><span class="w">    </span><span class="c1">// emit a greeting</span>
 <a id="__codelineno-7-54" name="__codelineno-7-54"></a><span class="w">    </span><span class="n">sayHello</span><span class="o">(</span><span class="n">greeting_ch</span><span class="o">)</span>
-<a id="__codelineno-7-55" name="__codelineno-7-55"></a><span class="o">}</span>
+<a id="__codelineno-7-55" name="__codelineno-7-55"></a>
+<a id="__codelineno-7-56" name="__codelineno-7-56"></a><span class="hll"><span class="w">    </span><span class="c1">// convert the greeting to uppercase</span>
+</span><a id="__codelineno-7-57" name="__codelineno-7-57"></a><span class="hll"><span class="w">    </span><span class="n">convertToUpper</span><span class="o">()</span>
+</span><a id="__codelineno-7-58" name="__codelineno-7-58"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
-<p><em>After:</em></p>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-53">53</a></span>
 <span class="normal"><a href="#__codelineno-8-54">54</a></span>
-<span class="normal"><a href="#__codelineno-8-55">55</a></span>
-<span class="normal"><a href="#__codelineno-8-56">56</a></span>
-<span class="normal"><a href="#__codelineno-8-57">57</a></span>
-<span class="normal"><a href="#__codelineno-8-58">58</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-53" name="__codelineno-8-53"></a><span class="w">    </span><span class="c1">// emit a greeting</span>
+<span class="normal"><a href="#__codelineno-8-55">55</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-53" name="__codelineno-8-53"></a><span class="w">    </span><span class="c1">// emit a greeting</span>
 <a id="__codelineno-8-54" name="__codelineno-8-54"></a><span class="w">    </span><span class="n">sayHello</span><span class="o">(</span><span class="n">greeting_ch</span><span class="o">)</span>
-<a id="__codelineno-8-55" name="__codelineno-8-55"></a>
-<a id="__codelineno-8-56" name="__codelineno-8-56"></a><span class="w">    </span><span class="c1">// convert the greeting to uppercase</span>
-<a id="__codelineno-8-57" name="__codelineno-8-57"></a><span class="w">    </span><span class="n">convertToUpper</span><span class="o">()</span>
-<a id="__codelineno-8-58" name="__codelineno-8-58"></a><span class="o">}</span>
+<a id="__codelineno-8-55" name="__codelineno-8-55"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p>This is not yet functional because we have not specified what should be input to the <code>convertToUpper()</code> process.</p>
 <h3 id="13-pass-the-output-of-the-first-process-to-the-second-process">1.3. Pass the output of the first process to the second process<a class="headerlink" href="#13-pass-the-output-of-the-first-process-to-the-second-process" title="Permanent link">&para;</a></h3>
 <p>Now we need to make the output of the <code>sayHello()</code> process flow into the <code>convertToUpper()</code> process.</p>
 <p>Conveniently, Nextflow automatically packages the output of a process into a channel called <code>&lt;process&gt;.out</code>.
 So the output of the <code>sayHello</code> process is a channel called <code>sayHello.out</code>, which we can plug straight into the call to <code>convertToUpper()</code>.</p>
 <p>In the workflow block, make the following code change:</p>
-<p><em>Before:</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">After</label><label for="__tabbed_2_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-56">56</a></span>
 <span class="normal"><a href="#__codelineno-9-57">57</a></span>
 <span class="normal"><a href="#__codelineno-9-58">58</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-56" name="__codelineno-9-56"></a><span class="w">    </span><span class="c1">// convert the greeting to uppercase</span>
-<a id="__codelineno-9-57" name="__codelineno-9-57"></a><span class="w">    </span><span class="n">convertToUpper</span><span class="o">()</span>
-<a id="__codelineno-9-58" name="__codelineno-9-58"></a><span class="o">}</span>
+<a id="__codelineno-9-57" name="__codelineno-9-57"></a><span class="hll"><span class="w">    </span><span class="n">convertToUpper</span><span class="o">(</span><span class="n">sayHello</span><span class="o">.</span><span class="na">out</span><span class="o">)</span>
+</span><a id="__codelineno-9-58" name="__codelineno-9-58"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
-<p><em>After:</em></p>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-56">56</a></span>
 <span class="normal"><a href="#__codelineno-10-57">57</a></span>
 <span class="normal"><a href="#__codelineno-10-58">58</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-56" name="__codelineno-10-56"></a><span class="w">    </span><span class="c1">// convert the greeting to uppercase</span>
-<a id="__codelineno-10-57" name="__codelineno-10-57"></a><span class="w">    </span><span class="n">convertToUpper</span><span class="o">(</span><span class="n">sayHello</span><span class="o">.</span><span class="na">out</span><span class="o">)</span>
+<a id="__codelineno-10-57" name="__codelineno-10-57"></a><span class="w">    </span><span class="n">convertToUpper</span><span class="o">()</span>
 <a id="__codelineno-10-58" name="__codelineno-10-58"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p>For a simple case like this (one output to one input), that's all we need to do to connect two processes!</p>
 <h3 id="14-run-the-workflow-again-with-resume">1.4. Run the workflow again with <code>-resume</code><a class="headerlink" href="#14-run-the-workflow-again-with-resume" title="Permanent link">&para;</a></h3>
 <p>Let's run this using the <code>-resume</code> flag, since we've already run the first step of the workflow successfully.</p>
@@ -3612,16 +3656,22 @@ What do we know we can get from the previous step in the workflow?</p>
 <p>The channel output by <code>convertToUpper()</code> will contain the paths to the individual files containing the uppercased greetings.
 That amounts to one input slot; let's call it <code>input_files</code> for simplicity.</p>
 <p>In the process block, make the following code change:</p>
-<p><em>Before:</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">After</label><label for="__tabbed_3_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-48">48</a></span>
 <span class="normal"><a href="#__codelineno-18-49">49</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-48" name="__codelineno-18-48"></a><span class="w">        </span><span class="nl">input:</span>
-<a id="__codelineno-18-49" name="__codelineno-18-49"></a><span class="w">            </span><span class="o">???</span>
-</code></pre></div></td></tr></table></div>
-<p><em>After:</em></p>
+<a id="__codelineno-18-49" name="__codelineno-18-49"></a><span class="hll"><span class="w">            </span><span class="n">path</span><span class="w"> </span><span class="n">input_files</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-48">48</a></span>
 <span class="normal"><a href="#__codelineno-19-49">49</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-48" name="__codelineno-19-48"></a><span class="w">        </span><span class="nl">input:</span>
-<a id="__codelineno-19-49" name="__codelineno-19-49"></a><span class="w">            </span><span class="n">path</span><span class="w"> </span><span class="n">input_files</span>
+<a id="__codelineno-19-49" name="__codelineno-19-49"></a><span class="w">            </span><span class="o">???</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p>Notice we use the <code>path</code> prefix even though we expect this to contain multiple files.
 Nextflow doesn't mind, so it doesn't matter.</p>
 <h4 id="223-compose-the-concatenation-command">2.2.3. Compose the concatenation command<a class="headerlink" href="#223-compose-the-concatenation-command" title="Permanent link">&para;</a></h4>
@@ -3630,24 +3680,30 @@ Specifically, we can't write the command up front, so we need to tell Nextflow h
 <p>In other words, if we have an input channel containing the element <code>[file1.txt, file2.txt, file3.txt]</code>, we need Nextflow to turn that into <code>cat file1.txt file2.txt file3.txt</code>.</p>
 <p>Fortunately, Nextflow is quite happy to do that for us if we simply write <code>cat ${input_files}</code> in the script command.</p>
 <p>In the process block, make the following code change:</p>
-<p><em>Before:</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">After</label><label for="__tabbed_4_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-54">54</a></span>
 <span class="normal"><a href="#__codelineno-20-55">55</a></span>
 <span class="normal"><a href="#__codelineno-20-56">56</a></span>
 <span class="normal"><a href="#__codelineno-20-57">57</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-54" name="__codelineno-20-54"></a><span class="w">    </span><span class="nl">script:</span>
 <a id="__codelineno-20-55" name="__codelineno-20-55"></a><span class="w">    </span><span class="s2">&quot;&quot;&quot;</span>
-<a id="__codelineno-20-56" name="__codelineno-20-56"></a><span class="s2">    ??? &gt; &#39;COLLECTED-output.txt&#39;</span>
-<a id="__codelineno-20-57" name="__codelineno-20-57"></a><span class="s2">    &quot;&quot;&quot;</span>
+<a id="__codelineno-20-56" name="__codelineno-20-56"></a><span class="hll"><span class="s2">    cat ${input_files} &gt; &#39;COLLECTED-output.txt&#39;</span>
+</span><a id="__codelineno-20-57" name="__codelineno-20-57"></a><span class="s2">    &quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
-<p><em>After:</em></p>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-54">54</a></span>
 <span class="normal"><a href="#__codelineno-21-55">55</a></span>
 <span class="normal"><a href="#__codelineno-21-56">56</a></span>
 <span class="normal"><a href="#__codelineno-21-57">57</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-54" name="__codelineno-21-54"></a><span class="w">    </span><span class="nl">script:</span>
 <a id="__codelineno-21-55" name="__codelineno-21-55"></a><span class="w">    </span><span class="s2">&quot;&quot;&quot;</span>
-<a id="__codelineno-21-56" name="__codelineno-21-56"></a><span class="s2">    cat ${input_files} &gt; &#39;COLLECTED-output.txt&#39;</span>
+<a id="__codelineno-21-56" name="__codelineno-21-56"></a><span class="s2">    ??? &gt; &#39;COLLECTED-output.txt&#39;</span>
 <a id="__codelineno-21-57" name="__codelineno-21-57"></a><span class="s2">    &quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p>In theory this should handle any arbitrary number of input files.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -3661,26 +3717,32 @@ You can see an example of this in the <a href="../../nf4_science/genomics/">Next
 <p>Now we should just need to call the collection process on the output of the uppercasing step.</p>
 <h4 id="231-connect-the-process-calls">2.3.1. Connect the process calls<a class="headerlink" href="#231-connect-the-process-calls" title="Permanent link">&para;</a></h4>
 <p>In the workflow block, make the following code change:</p>
-<p><em>Before:</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">After</label><label for="__tabbed_5_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-75">75</a></span>
 <span class="normal"><a href="#__codelineno-22-76">76</a></span>
-<span class="normal"><a href="#__codelineno-22-77">77</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-75" name="__codelineno-22-75"></a><span class="w">    </span><span class="c1">// convert the greeting to uppercase</span>
+<span class="normal"><a href="#__codelineno-22-77">77</a></span>
+<span class="normal"><a href="#__codelineno-22-78">78</a></span>
+<span class="normal"><a href="#__codelineno-22-79">79</a></span>
+<span class="normal"><a href="#__codelineno-22-80">80</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-75" name="__codelineno-22-75"></a><span class="w">    </span><span class="c1">// convert the greeting to uppercase</span>
 <a id="__codelineno-22-76" name="__codelineno-22-76"></a><span class="w">    </span><span class="n">convertToUpper</span><span class="o">(</span><span class="n">sayHello</span><span class="o">.</span><span class="na">out</span><span class="o">)</span>
-<a id="__codelineno-22-77" name="__codelineno-22-77"></a><span class="o">}</span>
+<a id="__codelineno-22-77" name="__codelineno-22-77"></a>
+<a id="__codelineno-22-78" name="__codelineno-22-78"></a><span class="hll"><span class="w">    </span><span class="c1">// collect all the greetings into one file</span>
+</span><a id="__codelineno-22-79" name="__codelineno-22-79"></a><span class="hll"><span class="w">    </span><span class="n">collectGreetings</span><span class="o">(</span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">)</span>
+</span><a id="__codelineno-22-80" name="__codelineno-22-80"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
-<p><em>After:</em></p>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-75">75</a></span>
 <span class="normal"><a href="#__codelineno-23-76">76</a></span>
-<span class="normal"><a href="#__codelineno-23-77">77</a></span>
-<span class="normal"><a href="#__codelineno-23-78">78</a></span>
-<span class="normal"><a href="#__codelineno-23-79">79</a></span>
-<span class="normal"><a href="#__codelineno-23-80">80</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-75" name="__codelineno-23-75"></a><span class="w">    </span><span class="c1">// convert the greeting to uppercase</span>
+<span class="normal"><a href="#__codelineno-23-77">77</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-75" name="__codelineno-23-75"></a><span class="w">    </span><span class="c1">// convert the greeting to uppercase</span>
 <a id="__codelineno-23-76" name="__codelineno-23-76"></a><span class="w">    </span><span class="n">convertToUpper</span><span class="o">(</span><span class="n">sayHello</span><span class="o">.</span><span class="na">out</span><span class="o">)</span>
-<a id="__codelineno-23-77" name="__codelineno-23-77"></a>
-<a id="__codelineno-23-78" name="__codelineno-23-78"></a><span class="w">    </span><span class="c1">// collect all the greetings into one file</span>
-<a id="__codelineno-23-79" name="__codelineno-23-79"></a><span class="w">    </span><span class="n">collectGreetings</span><span class="o">(</span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">)</span>
-<a id="__codelineno-23-80" name="__codelineno-23-80"></a><span class="o">}</span>
+<a id="__codelineno-23-77" name="__codelineno-23-77"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p>This connects the output of <code>convertToUpper()</code> to the input of <code>collectGreetings()</code>.</p>
 <h4 id="232-run-the-workflow-with-resume">2.3.2. Run the workflow with <code>-resume</code><a class="headerlink" href="#232-run-the-workflow-with-resume" title="Permanent link">&para;</a></h4>
 <p>Let's try it.</p>
@@ -3718,44 +3780,56 @@ We were only expecting one, but there are three.</p>
 <p>We take the <code>convertToUpper.out</code> and append the <code>collect()</code> operator, which gives us <code>convertToUpper.out.collect()</code>.
 We can plug that directly into the <code>collectGreetings()</code> process call.</p>
 <p>In the workflow block, make the following code change:</p>
-<p><em>Before:</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">After</label><label for="__tabbed_6_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-78">78</a></span>
 <span class="normal"><a href="#__codelineno-27-79">79</a></span>
 <span class="normal"><a href="#__codelineno-27-80">80</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-78" name="__codelineno-27-78"></a><span class="w">    </span><span class="c1">// collect all the greetings into one file</span>
-<a id="__codelineno-27-79" name="__codelineno-27-79"></a><span class="w">    </span><span class="n">collectGreetings</span><span class="o">(</span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">)</span>
-<a id="__codelineno-27-80" name="__codelineno-27-80"></a><span class="o">}</span>
+<a id="__codelineno-27-79" name="__codelineno-27-79"></a><span class="hll"><span class="w">    </span><span class="n">collectGreetings</span><span class="o">(</span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">collect</span><span class="o">())</span>
+</span><a id="__codelineno-27-80" name="__codelineno-27-80"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
-<p><em>After:</em></p>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-78">78</a></span>
 <span class="normal"><a href="#__codelineno-28-79">79</a></span>
 <span class="normal"><a href="#__codelineno-28-80">80</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-78" name="__codelineno-28-78"></a><span class="w">    </span><span class="c1">// collect all the greetings into one file</span>
-<a id="__codelineno-28-79" name="__codelineno-28-79"></a><span class="w">    </span><span class="n">collectGreetings</span><span class="o">(</span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">collect</span><span class="o">())</span>
+<a id="__codelineno-28-79" name="__codelineno-28-79"></a><span class="w">    </span><span class="n">collectGreetings</span><span class="o">(</span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">)</span>
 <a id="__codelineno-28-80" name="__codelineno-28-80"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <h4 id="242-add-some-view-statements">2.4.2. Add some <code>view()</code> statements<a class="headerlink" href="#242-add-some-view-statements" title="Permanent link">&para;</a></h4>
 <p>Let's also include a couple of <code>view()</code> statements to visualize the before and after states of the channel contents.</p>
-<p><em>Before:</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">After</label><label for="__tabbed_7_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-78">78</a></span>
 <span class="normal"><a href="#__codelineno-29-79">79</a></span>
-<span class="normal"><a href="#__codelineno-29-80">80</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-78" name="__codelineno-29-78"></a><span class="w">    </span><span class="c1">// collect all the greetings into one file</span>
+<span class="normal"><a href="#__codelineno-29-80">80</a></span>
+<span class="normal"><a href="#__codelineno-29-81">81</a></span>
+<span class="normal"><a href="#__codelineno-29-82">82</a></span>
+<span class="normal"><a href="#__codelineno-29-83">83</a></span>
+<span class="normal"><a href="#__codelineno-29-84">84</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-78" name="__codelineno-29-78"></a><span class="w">    </span><span class="c1">// collect all the greetings into one file</span>
 <a id="__codelineno-29-79" name="__codelineno-29-79"></a><span class="w">    </span><span class="n">collectGreetings</span><span class="o">(</span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">collect</span><span class="o">())</span>
-<a id="__codelineno-29-80" name="__codelineno-29-80"></a><span class="o">}</span>
+<a id="__codelineno-29-80" name="__codelineno-29-80"></a>
+<a id="__codelineno-29-81" name="__codelineno-29-81"></a><span class="hll"><span class="w">    </span><span class="c1">// optional view statements</span>
+</span><a id="__codelineno-29-82" name="__codelineno-29-82"></a><span class="w">    </span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">view</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">greeting</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s2">&quot;Before collect: $greeting&quot;</span><span class="w"> </span><span class="o">}</span>
+<a id="__codelineno-29-83" name="__codelineno-29-83"></a><span class="hll"><span class="w">    </span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">collect</span><span class="o">().</span><span class="na">view</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">greeting</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s2">&quot;After collect: $greeting&quot;</span><span class="w"> </span><span class="o">}</span>
+</span><a id="__codelineno-29-84" name="__codelineno-29-84"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
-<p><em>After:</em></p>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-78">78</a></span>
 <span class="normal"><a href="#__codelineno-30-79">79</a></span>
-<span class="normal"><a href="#__codelineno-30-80">80</a></span>
-<span class="normal"><a href="#__codelineno-30-81">81</a></span>
-<span class="normal"><a href="#__codelineno-30-82">82</a></span>
-<span class="normal"><a href="#__codelineno-30-83">83</a></span>
-<span class="normal"><a href="#__codelineno-30-84">84</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-78" name="__codelineno-30-78"></a><span class="w">    </span><span class="c1">// collect all the greetings into one file</span>
+<span class="normal"><a href="#__codelineno-30-80">80</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-78" name="__codelineno-30-78"></a><span class="w">    </span><span class="c1">// collect all the greetings into one file</span>
 <a id="__codelineno-30-79" name="__codelineno-30-79"></a><span class="w">    </span><span class="n">collectGreetings</span><span class="o">(</span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">collect</span><span class="o">())</span>
-<a id="__codelineno-30-80" name="__codelineno-30-80"></a>
-<a id="__codelineno-30-81" name="__codelineno-30-81"></a><span class="w">    </span><span class="c1">// optional view statements</span>
-<a id="__codelineno-30-82" name="__codelineno-30-82"></a><span class="w">    </span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">view</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">greeting</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s2">&quot;Before collect: $greeting&quot;</span><span class="w"> </span><span class="o">}</span>
-<a id="__codelineno-30-83" name="__codelineno-30-83"></a><span class="w">    </span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">collect</span><span class="o">().</span><span class="na">view</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">greeting</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s2">&quot;After collect: $greeting&quot;</span><span class="w"> </span><span class="o">}</span>
-<a id="__codelineno-30-84" name="__codelineno-30-84"></a><span class="o">}</span>
+<a id="__codelineno-30-80" name="__codelineno-30-80"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p>The <code>view()</code> statements can go anywhere you want; we put them after the call for readability.</p>
 <h4 id="243-run-the-workflow-again-with-resume">2.4.3. Run the workflow again with <code>-resume</code><a class="headerlink" href="#243-run-the-workflow-again-with-resume" title="Permanent link">&para;</a></h4>
 <p>Let's try it:</p>
@@ -3819,23 +3893,31 @@ This shows you that the order in which elements flow through process calls is no
 <p>Good news: we can declare as many input variables as we want.
 Let's call this one <code>batch_name</code>.</p>
 <p>In the process block, make the following code change:</p>
-<p><em>Before:</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">After</label><label for="__tabbed_8_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-48">48</a></span>
-<span class="normal"><a href="#__codelineno-34-49">49</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-34-48" name="__codelineno-34-48"></a><span class="w">    </span><span class="nl">input:</span>
+<span class="normal"><a href="#__codelineno-34-49">49</a></span>
+<span class="normal"><a href="#__codelineno-34-50">50</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-34-48" name="__codelineno-34-48"></a><span class="w">    </span><span class="nl">input:</span>
 <a id="__codelineno-34-49" name="__codelineno-34-49"></a><span class="w">        </span><span class="n">path</span><span class="w"> </span><span class="n">input_files</span>
-</code></pre></div></td></tr></table></div>
-<p><em>After:</em></p>
+<a id="__codelineno-34-50" name="__codelineno-34-50"></a><span class="hll"><span class="w">        </span><span class="n">val</span><span class="w"> </span><span class="n">batch_name</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-48">48</a></span>
-<span class="normal"><a href="#__codelineno-35-49">49</a></span>
-<span class="normal"><a href="#__codelineno-35-50">50</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-35-48" name="__codelineno-35-48"></a><span class="w">    </span><span class="nl">input:</span>
+<span class="normal"><a href="#__codelineno-35-49">49</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-35-48" name="__codelineno-35-48"></a><span class="w">    </span><span class="nl">input:</span>
 <a id="__codelineno-35-49" name="__codelineno-35-49"></a><span class="w">        </span><span class="n">path</span><span class="w"> </span><span class="n">input_files</span>
-<a id="__codelineno-35-50" name="__codelineno-35-50"></a><span class="w">        </span><span class="n">val</span><span class="w"> </span><span class="n">batch_name</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p>You can set up your processes to expect as many inputs as you want.
 Later on, you will learn how to manage required vs. optional inputs.</p>
 <h4 id="312-use-the-batch_name-variable-in-the-output-file-name">3.1.2. Use the <code>batch_name</code> variable in the output file name<a class="headerlink" href="#312-use-the-batch_name-variable-in-the-output-file-name" title="Permanent link">&para;</a></h4>
 <p>In the process block, make the following code change:</p>
-<p><em>Before:</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">After</label><label for="__tabbed_9_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-52">52</a></span>
 <span class="normal"><a href="#__codelineno-36-53">53</a></span>
 <span class="normal"><a href="#__codelineno-36-54">54</a></span>
@@ -3843,14 +3925,15 @@ Later on, you will learn how to manage required vs. optional inputs.</p>
 <span class="normal"><a href="#__codelineno-36-56">56</a></span>
 <span class="normal"><a href="#__codelineno-36-57">57</a></span>
 <span class="normal"><a href="#__codelineno-36-58">58</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-36-52" name="__codelineno-36-52"></a><span class="w">    </span><span class="nl">output:</span>
-<a id="__codelineno-36-53" name="__codelineno-36-53"></a><span class="w">        </span><span class="n">path</span><span class="w"> </span><span class="s2">&quot;COLLECTED-output.txt&quot;</span>
-<a id="__codelineno-36-54" name="__codelineno-36-54"></a>
+<a id="__codelineno-36-53" name="__codelineno-36-53"></a><span class="hll"><span class="w">        </span><span class="n">path</span><span class="w"> </span><span class="s2">&quot;COLLECTED-${batch_name}-output.txt&quot;</span>
+</span><a id="__codelineno-36-54" name="__codelineno-36-54"></a>
 <a id="__codelineno-36-55" name="__codelineno-36-55"></a><span class="w">    </span><span class="nl">script:</span>
 <a id="__codelineno-36-56" name="__codelineno-36-56"></a><span class="w">    </span><span class="s2">&quot;&quot;&quot;</span>
-<a id="__codelineno-36-57" name="__codelineno-36-57"></a><span class="s2">    cat ${input_files} &gt; &#39;COLLECTED-output.txt&#39;</span>
-<a id="__codelineno-36-58" name="__codelineno-36-58"></a><span class="s2">    &quot;&quot;&quot;</span>
+<a id="__codelineno-36-57" name="__codelineno-36-57"></a><span class="hll"><span class="s2">    cat ${input_files} &gt; &#39;COLLECTED-${batch_name}-output.txt&#39;</span>
+</span><a id="__codelineno-36-58" name="__codelineno-36-58"></a><span class="s2">    &quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
-<p><em>After:</em></p>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-37-52">52</a></span>
 <span class="normal"><a href="#__codelineno-37-53">53</a></span>
 <span class="normal"><a href="#__codelineno-37-54">54</a></span>
@@ -3858,13 +3941,16 @@ Later on, you will learn how to manage required vs. optional inputs.</p>
 <span class="normal"><a href="#__codelineno-37-56">56</a></span>
 <span class="normal"><a href="#__codelineno-37-57">57</a></span>
 <span class="normal"><a href="#__codelineno-37-58">58</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-37-52" name="__codelineno-37-52"></a><span class="w">    </span><span class="nl">output:</span>
-<a id="__codelineno-37-53" name="__codelineno-37-53"></a><span class="w">        </span><span class="n">path</span><span class="w"> </span><span class="s2">&quot;COLLECTED-${batch_name}-output.txt&quot;</span>
+<a id="__codelineno-37-53" name="__codelineno-37-53"></a><span class="w">        </span><span class="n">path</span><span class="w"> </span><span class="s2">&quot;COLLECTED-output.txt&quot;</span>
 <a id="__codelineno-37-54" name="__codelineno-37-54"></a>
 <a id="__codelineno-37-55" name="__codelineno-37-55"></a><span class="w">    </span><span class="nl">script:</span>
 <a id="__codelineno-37-56" name="__codelineno-37-56"></a><span class="w">    </span><span class="s2">&quot;&quot;&quot;</span>
-<a id="__codelineno-37-57" name="__codelineno-37-57"></a><span class="s2">    cat ${input_files} &gt; &#39;COLLECTED-${batch_name}-output.txt&#39;</span>
+<a id="__codelineno-37-57" name="__codelineno-37-57"></a><span class="s2">    cat ${input_files} &gt; &#39;COLLECTED-output.txt&#39;</span>
 <a id="__codelineno-37-58" name="__codelineno-37-58"></a><span class="s2">    &quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p>This sets up the process to use the <code>batch_name</code> value to generate a specific filename for the final output of the workflow.</p>
 <h3 id="32-add-a-batch-command-line-parameter">3.2. Add a <code>batch</code> command-line parameter<a class="headerlink" href="#32-add-a-batch-command-line-parameter" title="Permanent link">&para;</a></h3>
 <p>Now we need a way to supply the value for <code>batch_name</code> and feed it to the process call.</p>
@@ -3872,40 +3958,52 @@ Later on, you will learn how to manage required vs. optional inputs.</p>
 <p>You already know how to use the <code>params</code> system to declare CLI parameters.
 Let's use that to declare a <code>batch</code> parameter (with a default value because we are lazy).</p>
 <p>In the pipeline parameters section, make the following code changes:</p>
-<p><em>Before:</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">After</label><label for="__tabbed_10_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-38-61">61</a></span>
 <span class="normal"><a href="#__codelineno-38-62">62</a></span>
 <span class="normal"><a href="#__codelineno-38-63">63</a></span>
-<span class="normal"><a href="#__codelineno-38-64">64</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-38-61" name="__codelineno-38-61"></a><span class="cm">/*</span>
+<span class="normal"><a href="#__codelineno-38-64">64</a></span>
+<span class="normal"><a href="#__codelineno-38-65">65</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-38-61" name="__codelineno-38-61"></a><span class="cm">/*</span>
 <a id="__codelineno-38-62" name="__codelineno-38-62"></a><span class="cm"> * Pipeline parameters</span>
 <a id="__codelineno-38-63" name="__codelineno-38-63"></a><span class="cm"> */</span>
 <a id="__codelineno-38-64" name="__codelineno-38-64"></a><span class="n">params</span><span class="o">.</span><span class="na">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;greetings.csv&#39;</span>
-</code></pre></div></td></tr></table></div>
-<p><em>After:</em></p>
+<a id="__codelineno-38-65" name="__codelineno-38-65"></a><span class="hll"><span class="n">params</span><span class="o">.</span><span class="na">batch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;test-batch&#39;</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-39-61">61</a></span>
 <span class="normal"><a href="#__codelineno-39-62">62</a></span>
 <span class="normal"><a href="#__codelineno-39-63">63</a></span>
-<span class="normal"><a href="#__codelineno-39-64">64</a></span>
-<span class="normal"><a href="#__codelineno-39-65">65</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-39-61" name="__codelineno-39-61"></a><span class="cm">/*</span>
+<span class="normal"><a href="#__codelineno-39-64">64</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-39-61" name="__codelineno-39-61"></a><span class="cm">/*</span>
 <a id="__codelineno-39-62" name="__codelineno-39-62"></a><span class="cm"> * Pipeline parameters</span>
 <a id="__codelineno-39-63" name="__codelineno-39-63"></a><span class="cm"> */</span>
 <a id="__codelineno-39-64" name="__codelineno-39-64"></a><span class="n">params</span><span class="o">.</span><span class="na">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;greetings.csv&#39;</span>
-<a id="__codelineno-39-65" name="__codelineno-39-65"></a><span class="n">params</span><span class="o">.</span><span class="na">batch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;test-batch&#39;</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p>Remember you can override that default value by specifying a value with <code>--batch</code> on the command line.</p>
 <h4 id="322-pass-the-batch-parameter-to-the-process">3.2.2. Pass the <code>batch</code> parameter to the process<a class="headerlink" href="#322-pass-the-batch-parameter-to-the-process" title="Permanent link">&para;</a></h4>
 <p>To provide the value of the parameter to the process, we need to add it in the process call.</p>
 <p>In the workflow block, make the following code change:</p>
-<p><em>Before:</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">After</label><label for="__tabbed_11_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-40-80">80</a></span>
 <span class="normal"><a href="#__codelineno-40-81">81</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-40-80" name="__codelineno-40-80"></a><span class="w">    </span><span class="c1">// collect all the greetings into one file</span>
-<a id="__codelineno-40-81" name="__codelineno-40-81"></a><span class="w">    </span><span class="n">collectGreetings</span><span class="o">(</span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">collect</span><span class="o">())</span>
-</code></pre></div></td></tr></table></div>
-<p><em>After:</em></p>
+<a id="__codelineno-40-81" name="__codelineno-40-81"></a><span class="hll"><span class="w">    </span><span class="n">collectGreetings</span><span class="o">(</span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">collect</span><span class="o">(),</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">batch</span><span class="o">)</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-41-80">80</a></span>
 <span class="normal"><a href="#__codelineno-41-81">81</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-41-80" name="__codelineno-41-80"></a><span class="w">    </span><span class="c1">// collect all the greetings into one file</span>
-<a id="__codelineno-41-81" name="__codelineno-41-81"></a><span class="w">    </span><span class="n">collectGreetings</span><span class="o">(</span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">collect</span><span class="o">(),</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">batch</span><span class="o">)</span>
+<a id="__codelineno-41-81" name="__codelineno-41-81"></a><span class="w">    </span><span class="n">collectGreetings</span><span class="o">(</span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">collect</span><span class="o">())</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>You MUST provide the inputs to a process in the EXACT SAME ORDER as they are listed in the input definition block of the process.</p>
@@ -3961,43 +4059,55 @@ This is not terribly convenient; it's too easy to grab the wrong index.</p>
 <p>Conveniently, Nextflow lets us add arbitrary code in the <code>script:</code> block of the process definition, which comes in really handy for doing things like this.</p>
 <p>That means we can use the built-in <code>size()</code> function to get the number of files in the <code>input_files</code> array.</p>
 <p>In the <code>collectGreetings</code> process block, make the following code change:</p>
-<p><em>Before:</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">After</label><label for="__tabbed_12_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-46-55">55</a></span>
 <span class="normal"><a href="#__codelineno-46-56">56</a></span>
 <span class="normal"><a href="#__codelineno-46-57">57</a></span>
-<span class="normal"><a href="#__codelineno-46-58">58</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-46-55" name="__codelineno-46-55"></a><span class="w">    </span><span class="nl">script:</span>
-<a id="__codelineno-46-56" name="__codelineno-46-56"></a><span class="w">    </span><span class="s2">&quot;&quot;&quot;</span>
-<a id="__codelineno-46-57" name="__codelineno-46-57"></a><span class="s2">    cat ${input_files} &gt; &#39;COLLECTED-${batch_name}-output.txt&#39;</span>
-<a id="__codelineno-46-58" name="__codelineno-46-58"></a><span class="s2">    &quot;&quot;&quot;</span>
+<span class="normal"><a href="#__codelineno-46-58">58</a></span>
+<span class="normal"><a href="#__codelineno-46-59">59</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-46-55" name="__codelineno-46-55"></a><span class="w">    </span><span class="nl">script:</span>
+<a id="__codelineno-46-56" name="__codelineno-46-56"></a><span class="hll"><span class="w">        </span><span class="n">count_greetings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input_files</span><span class="o">.</span><span class="na">size</span><span class="o">()</span>
+</span><a id="__codelineno-46-57" name="__codelineno-46-57"></a><span class="w">    </span><span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-46-58" name="__codelineno-46-58"></a><span class="s2">    cat ${input_files} &gt; &#39;COLLECTED-${batch_name}-output.txt&#39;</span>
+<a id="__codelineno-46-59" name="__codelineno-46-59"></a><span class="s2">    &quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
-<p><em>After:</em></p>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-47-55">55</a></span>
 <span class="normal"><a href="#__codelineno-47-56">56</a></span>
 <span class="normal"><a href="#__codelineno-47-57">57</a></span>
-<span class="normal"><a href="#__codelineno-47-58">58</a></span>
-<span class="normal"><a href="#__codelineno-47-59">59</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-47-55" name="__codelineno-47-55"></a><span class="w">    </span><span class="nl">script:</span>
-<a id="__codelineno-47-56" name="__codelineno-47-56"></a><span class="w">        </span><span class="n">count_greetings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input_files</span><span class="o">.</span><span class="na">size</span><span class="o">()</span>
-<a id="__codelineno-47-57" name="__codelineno-47-57"></a><span class="w">    </span><span class="s2">&quot;&quot;&quot;</span>
-<a id="__codelineno-47-58" name="__codelineno-47-58"></a><span class="s2">    cat ${input_files} &gt; &#39;COLLECTED-${batch_name}-output.txt&#39;</span>
-<a id="__codelineno-47-59" name="__codelineno-47-59"></a><span class="s2">    &quot;&quot;&quot;</span>
+<span class="normal"><a href="#__codelineno-47-58">58</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-47-55" name="__codelineno-47-55"></a><span class="w">    </span><span class="nl">script:</span>
+<a id="__codelineno-47-56" name="__codelineno-47-56"></a><span class="w">    </span><span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-47-57" name="__codelineno-47-57"></a><span class="s2">    cat ${input_files} &gt; &#39;COLLECTED-${batch_name}-output.txt&#39;</span>
+<a id="__codelineno-47-58" name="__codelineno-47-58"></a><span class="s2">    &quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p>The <code>count_greetings</code> variable will be computed at runtime.</p>
 <h3 id="412-emit-the-count-as-a-named-output">4.1.2. Emit the count as a named output<a class="headerlink" href="#412-emit-the-count-as-a-named-output" title="Permanent link">&para;</a></h3>
 <p>In principle all we need to do is to add the <code>count_greetings</code> variable to the <code>output:</code> block.</p>
 <p>However, while we're at it, we're also going to add some <code>emit:</code> tags to our output declarations. These will enable us to select the outputs by name instead of having to use positional indices.</p>
 <p>In the process block, make the following code change:</p>
-<p><em>Before:</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">After</label><label for="__tabbed_13_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-48-52">52</a></span>
-<span class="normal"><a href="#__codelineno-48-53">53</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-48-52" name="__codelineno-48-52"></a><span class="w">    </span><span class="nl">output:</span>
-<a id="__codelineno-48-53" name="__codelineno-48-53"></a><span class="w">        </span><span class="n">path</span><span class="w"> </span><span class="s2">&quot;COLLECTED-${batch_name}-output.txt&quot;</span>
-</code></pre></div></td></tr></table></div>
-<p><em>After:</em></p>
+<span class="normal"><a href="#__codelineno-48-53">53</a></span>
+<span class="normal"><a href="#__codelineno-48-54">54</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-48-52" name="__codelineno-48-52"></a><span class="w">    </span><span class="nl">output:</span>
+<a id="__codelineno-48-53" name="__codelineno-48-53"></a><span class="hll"><span class="w">        </span><span class="n">path</span><span class="w"> </span><span class="s2">&quot;COLLECTED-${batch_name}-output.txt&quot;</span><span class="w"> </span><span class="o">,</span><span class="w"> </span><span class="nl">emit:</span><span class="w"> </span><span class="n">outfile</span>
+</span><a id="__codelineno-48-54" name="__codelineno-48-54"></a><span class="hll"><span class="w">        </span><span class="n">val</span><span class="w"> </span><span class="n">count_greetings</span><span class="w"> </span><span class="o">,</span><span class="w"> </span><span class="nl">emit:</span><span class="w"> </span><span class="n">count</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-49-52">52</a></span>
-<span class="normal"><a href="#__codelineno-49-53">53</a></span>
-<span class="normal"><a href="#__codelineno-49-54">54</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-49-52" name="__codelineno-49-52"></a><span class="w">    </span><span class="nl">output:</span>
-<a id="__codelineno-49-53" name="__codelineno-49-53"></a><span class="w">        </span><span class="n">path</span><span class="w"> </span><span class="s2">&quot;COLLECTED-${batch_name}-output.txt&quot;</span><span class="w"> </span><span class="o">,</span><span class="w"> </span><span class="nl">emit:</span><span class="w"> </span><span class="n">outfile</span>
-<a id="__codelineno-49-54" name="__codelineno-49-54"></a><span class="w">        </span><span class="n">val</span><span class="w"> </span><span class="n">count_greetings</span><span class="w"> </span><span class="o">,</span><span class="w"> </span><span class="nl">emit:</span><span class="w"> </span><span class="n">count</span>
+<span class="normal"><a href="#__codelineno-49-53">53</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-49-52" name="__codelineno-49-52"></a><span class="w">    </span><span class="nl">output:</span>
+<a id="__codelineno-49-53" name="__codelineno-49-53"></a><span class="w">        </span><span class="n">path</span><span class="w"> </span><span class="s2">&quot;COLLECTED-${batch_name}-output.txt&quot;</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p>The <code>emit:</code> tags are optional, and we could have added a tag to only one of the outputs.
 But as the saying goes, why not both?</p>
 <h3 id="42-report-the-output-at-the-end-of-the-workflow">4.2. Report the output at the end of the workflow<a class="headerlink" href="#42-report-the-output-at-the-end-of-the-workflow" title="Permanent link">&para;</a></h3>
@@ -4008,22 +4118,28 @@ But as the saying goes, why not both?</p>
 </ul>
 <p>We could send either or both of these to another process for further work. However, in the interest of wrapping this up, we're just going to use <code>view()</code> to demonstrate that we can access and report the count of greetings.</p>
 <p>In the workflow block, make the following code change:</p>
-<p><em>Before:</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">After</label><label for="__tabbed_14_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-50-82">82</a></span>
-<span class="normal"><a href="#__codelineno-50-83">83</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-50-82" name="__codelineno-50-82"></a><span class="w">    </span><span class="c1">// collect all the greetings into one file</span>
+<span class="normal"><a href="#__codelineno-50-83">83</a></span>
+<span class="normal"><a href="#__codelineno-50-84">84</a></span>
+<span class="normal"><a href="#__codelineno-50-85">85</a></span>
+<span class="normal"><a href="#__codelineno-50-86">86</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-50-82" name="__codelineno-50-82"></a><span class="w">    </span><span class="c1">// collect all the greetings into one file</span>
 <a id="__codelineno-50-83" name="__codelineno-50-83"></a><span class="w">    </span><span class="n">collectGreetings</span><span class="o">(</span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">collect</span><span class="o">(),</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">batch</span><span class="o">)</span>
-</code></pre></div></td></tr></table></div>
-<p><em>After:</em></p>
+<a id="__codelineno-50-84" name="__codelineno-50-84"></a>
+<a id="__codelineno-50-85" name="__codelineno-50-85"></a><span class="hll"><span class="w">    </span><span class="c1">// emit a message about the size of the batch</span>
+</span><a id="__codelineno-50-86" name="__codelineno-50-86"></a><span class="hll"><span class="w">    </span><span class="n">collectGreetings</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">count</span><span class="o">.</span><span class="na">view</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">num_greetings</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s2">&quot;There were $num_greetings greetings in this batch&quot;</span><span class="w"> </span><span class="o">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-workflow.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-51-82">82</a></span>
-<span class="normal"><a href="#__codelineno-51-83">83</a></span>
-<span class="normal"><a href="#__codelineno-51-84">84</a></span>
-<span class="normal"><a href="#__codelineno-51-85">85</a></span>
-<span class="normal"><a href="#__codelineno-51-86">86</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-51-82" name="__codelineno-51-82"></a><span class="w">    </span><span class="c1">// collect all the greetings into one file</span>
+<span class="normal"><a href="#__codelineno-51-83">83</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-51-82" name="__codelineno-51-82"></a><span class="w">    </span><span class="c1">// collect all the greetings into one file</span>
 <a id="__codelineno-51-83" name="__codelineno-51-83"></a><span class="w">    </span><span class="n">collectGreetings</span><span class="o">(</span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">collect</span><span class="o">(),</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">batch</span><span class="o">)</span>
-<a id="__codelineno-51-84" name="__codelineno-51-84"></a>
-<a id="__codelineno-51-85" name="__codelineno-51-85"></a><span class="w">    </span><span class="c1">// emit a message about the size of the batch</span>
-<a id="__codelineno-51-86" name="__codelineno-51-86"></a><span class="w">    </span><span class="n">collectGreetings</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">count</span><span class="o">.</span><span class="na">view</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">num_greetings</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s2">&quot;There were $num_greetings greetings in this batch&quot;</span><span class="w"> </span><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>There are a few other ways we could achieve a similar result, including some more elegant ones like the <code>count()</code> operator, but this allows us to show how to handle multiple outputs, which is what we care about.</p>

@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/img/nextflow-icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.10">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -255,17 +255,25 @@
             </a>
           </li>
         
+          <li class="md-select__item">
+            <a href="../../../it/hello_nextflow/05_hello_containers/" hreflang="it" class="md-select__link">
+              Italiano
+            </a>
+          </li>
+        
       </ul>
     </div>
   </div>
 </div>
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -302,6 +310,7 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
@@ -482,6 +491,29 @@
   
   <span class="md-ellipsis">
     Instalação local
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../envsetup/03_devcontainer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Local installation using VSCode Devcontainers extension
     
   </span>
   
@@ -3335,34 +3367,40 @@ This means that you can use any container image you like to run your processes, 
 <p>Now we need to import the module and call the process.</p>
 <h4 id="221-import-the-cowpy-process-into-hello-containersnf">2.2.1. Import the <code>cowpy</code> process into <code>hello-containers.nf</code><a class="headerlink" href="#221-import-the-cowpy-process-into-hello-containersnf" title="Permanent link">&para;</a></h4>
 <p>Insert the import declaration above the workflow block and fill it out appropriately.</p>
-<p><em>Before:</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">After</label><label for="__tabbed_1_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-containers.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-24-10">10</a></span>
 <span class="normal"><a href="#__codelineno-24-11">11</a></span>
 <span class="normal"><a href="#__codelineno-24-12">12</a></span>
 <span class="normal"><a href="#__codelineno-24-13">13</a></span>
-<span class="normal"><a href="#__codelineno-24-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-9" name="__codelineno-24-9"></a><span class="c1">// Include modules</span>
+<span class="normal"><a href="#__codelineno-24-14">14</a></span>
+<span class="normal"><a href="#__codelineno-24-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-9" name="__codelineno-24-9"></a><span class="c1">// Include modules</span>
 <a id="__codelineno-24-10" name="__codelineno-24-10"></a><span class="n">include</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">sayHello</span><span class="w"> </span><span class="o">}</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="s1">&#39;./modules/sayHello.nf&#39;</span>
 <a id="__codelineno-24-11" name="__codelineno-24-11"></a><span class="n">include</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">convertToUpper</span><span class="w"> </span><span class="o">}</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="s1">&#39;./modules/convertToUpper.nf&#39;</span>
 <a id="__codelineno-24-12" name="__codelineno-24-12"></a><span class="n">include</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">collectGreetings</span><span class="w"> </span><span class="o">}</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="s1">&#39;./modules/collectGreetings.nf&#39;</span>
-<a id="__codelineno-24-13" name="__codelineno-24-13"></a>
-<a id="__codelineno-24-14" name="__codelineno-24-14"></a><span class="n">workflow</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-24-13" name="__codelineno-24-13"></a><span class="hll"><span class="n">include</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">cowpy</span><span class="w"> </span><span class="o">}</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="s1">&#39;./modules/cowpy.nf&#39;</span>
+</span><a id="__codelineno-24-14" name="__codelineno-24-14"></a>
+<a id="__codelineno-24-15" name="__codelineno-24-15"></a><span class="n">workflow</span><span class="w"> </span><span class="o">{</span>
 </code></pre></div></td></tr></table></div>
-<p><em>After:</em></p>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-containers.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-25-10">10</a></span>
 <span class="normal"><a href="#__codelineno-25-11">11</a></span>
 <span class="normal"><a href="#__codelineno-25-12">12</a></span>
 <span class="normal"><a href="#__codelineno-25-13">13</a></span>
-<span class="normal"><a href="#__codelineno-25-14">14</a></span>
-<span class="normal"><a href="#__codelineno-25-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-9" name="__codelineno-25-9"></a><span class="c1">// Include modules</span>
+<span class="normal"><a href="#__codelineno-25-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-9" name="__codelineno-25-9"></a><span class="c1">// Include modules</span>
 <a id="__codelineno-25-10" name="__codelineno-25-10"></a><span class="n">include</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">sayHello</span><span class="w"> </span><span class="o">}</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="s1">&#39;./modules/sayHello.nf&#39;</span>
 <a id="__codelineno-25-11" name="__codelineno-25-11"></a><span class="n">include</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">convertToUpper</span><span class="w"> </span><span class="o">}</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="s1">&#39;./modules/convertToUpper.nf&#39;</span>
 <a id="__codelineno-25-12" name="__codelineno-25-12"></a><span class="n">include</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">collectGreetings</span><span class="w"> </span><span class="o">}</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="s1">&#39;./modules/collectGreetings.nf&#39;</span>
-<a id="__codelineno-25-13" name="__codelineno-25-13"></a><span class="n">include</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">cowpy</span><span class="w"> </span><span class="o">}</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="s1">&#39;./modules/cowpy.nf&#39;</span>
-<a id="__codelineno-25-14" name="__codelineno-25-14"></a>
-<a id="__codelineno-25-15" name="__codelineno-25-15"></a><span class="n">workflow</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-25-13" name="__codelineno-25-13"></a>
+<a id="__codelineno-25-14" name="__codelineno-25-14"></a><span class="n">workflow</span><span class="w"> </span><span class="o">{</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <h4 id="222-add-a-call-to-the-cowpy-process-in-the-workflow">2.2.2. Add a call to the <code>cowpy</code> process in the workflow<a class="headerlink" href="#222-add-a-call-to-the-cowpy-process-in-the-workflow" title="Permanent link">&para;</a></h4>
 <p>Let's connect the <code>cowpy()</code> process to the output of the <code>collectGreetings()</code> process, which as you may recall produces two outputs:</p>
 <ul>
@@ -3370,61 +3408,73 @@ This means that you can use any container image you like to run your processes, 
 <li><code>collectGreetings.out.count</code> contains the count of greetings per batch</li>
 </ul>
 <p>In the workflow block, make the following code change:</p>
-<p><em>Before:</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">After</label><label for="__tabbed_2_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-containers.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-28">28</a></span>
 <span class="normal"><a href="#__codelineno-26-29">29</a></span>
 <span class="normal"><a href="#__codelineno-26-30">30</a></span>
 <span class="normal"><a href="#__codelineno-26-31">31</a></span>
-<span class="normal"><a href="#__codelineno-26-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-28" name="__codelineno-26-28"></a><span class="w">    </span><span class="c1">// collect all the greetings into one file</span>
+<span class="normal"><a href="#__codelineno-26-32">32</a></span>
+<span class="normal"><a href="#__codelineno-26-33">33</a></span>
+<span class="normal"><a href="#__codelineno-26-34">34</a></span>
+<span class="normal"><a href="#__codelineno-26-35">35</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-28" name="__codelineno-26-28"></a><span class="w">    </span><span class="c1">// collect all the greetings into one file</span>
 <a id="__codelineno-26-29" name="__codelineno-26-29"></a><span class="w">    </span><span class="n">collectGreetings</span><span class="o">(</span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">collect</span><span class="o">(),</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">batch</span><span class="o">)</span>
 <a id="__codelineno-26-30" name="__codelineno-26-30"></a>
 <a id="__codelineno-26-31" name="__codelineno-26-31"></a><span class="w">    </span><span class="c1">// emit a message about the size of the batch</span>
 <a id="__codelineno-26-32" name="__codelineno-26-32"></a><span class="w">    </span><span class="n">collectGreetings</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">count</span><span class="o">.</span><span class="na">view</span><span class="o">{</span><span class="w"> </span><span class="n">num_greetings</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s2">&quot;There were $num_greetings greetings in this batch&quot;</span><span class="w"> </span><span class="o">}</span>
-</code></pre></div></td></tr></table></div>
-<p><em>After:</em></p>
+<a id="__codelineno-26-33" name="__codelineno-26-33"></a>
+<a id="__codelineno-26-34" name="__codelineno-26-34"></a><span class="hll"><span class="w">    </span><span class="c1">// generate ASCII art of the greetings with cowpy</span>
+</span><a id="__codelineno-26-35" name="__codelineno-26-35"></a><span class="hll"><span class="w">    </span><span class="n">cowpy</span><span class="o">(</span><span class="n">collectGreetings</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">outfile</span><span class="o">,</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">character</span><span class="o">)</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-containers.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-28">28</a></span>
 <span class="normal"><a href="#__codelineno-27-29">29</a></span>
 <span class="normal"><a href="#__codelineno-27-30">30</a></span>
 <span class="normal"><a href="#__codelineno-27-31">31</a></span>
-<span class="normal"><a href="#__codelineno-27-32">32</a></span>
-<span class="normal"><a href="#__codelineno-27-33">33</a></span>
-<span class="normal"><a href="#__codelineno-27-34">34</a></span>
-<span class="normal"><a href="#__codelineno-27-35">35</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-28" name="__codelineno-27-28"></a><span class="w">    </span><span class="c1">// collect all the greetings into one file</span>
+<span class="normal"><a href="#__codelineno-27-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-28" name="__codelineno-27-28"></a><span class="w">    </span><span class="c1">// collect all the greetings into one file</span>
 <a id="__codelineno-27-29" name="__codelineno-27-29"></a><span class="w">    </span><span class="n">collectGreetings</span><span class="o">(</span><span class="n">convertToUpper</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">collect</span><span class="o">(),</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">batch</span><span class="o">)</span>
 <a id="__codelineno-27-30" name="__codelineno-27-30"></a>
 <a id="__codelineno-27-31" name="__codelineno-27-31"></a><span class="w">    </span><span class="c1">// emit a message about the size of the batch</span>
 <a id="__codelineno-27-32" name="__codelineno-27-32"></a><span class="w">    </span><span class="n">collectGreetings</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">count</span><span class="o">.</span><span class="na">view</span><span class="o">{</span><span class="w"> </span><span class="n">num_greetings</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s2">&quot;There were $num_greetings greetings in this batch&quot;</span><span class="w"> </span><span class="o">}</span>
-<a id="__codelineno-27-33" name="__codelineno-27-33"></a>
-<a id="__codelineno-27-34" name="__codelineno-27-34"></a><span class="w">    </span><span class="c1">// generate ASCII art of the greetings with cowpy</span>
-<a id="__codelineno-27-35" name="__codelineno-27-35"></a><span class="w">    </span><span class="n">cowpy</span><span class="o">(</span><span class="n">collectGreetings</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">outfile</span><span class="o">,</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">character</span><span class="o">)</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p>Notice that we include a new CLI parameter, <code>params.character</code>, in order to specify which character we want to have say the greetings.</p>
 <h4 id="223-set-a-default-value-for-paramscharacter">2.2.3. Set a default value for <code>params.character</code><a class="headerlink" href="#223-set-a-default-value-for-paramscharacter" title="Permanent link">&para;</a></h4>
 <p>We like to be lazy and skip typing parameters in our command lines.</p>
-<p><em>Before:</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">After</label><label for="__tabbed_3_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-containers.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-3">3</a></span>
 <span class="normal"><a href="#__codelineno-28-4">4</a></span>
 <span class="normal"><a href="#__codelineno-28-5">5</a></span>
 <span class="normal"><a href="#__codelineno-28-6">6</a></span>
-<span class="normal"><a href="#__codelineno-28-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="cm">/*</span>
+<span class="normal"><a href="#__codelineno-28-7">7</a></span>
+<span class="normal"><a href="#__codelineno-28-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="cm">/*</span>
 <a id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="cm"> * Pipeline parameters</span>
 <a id="__codelineno-28-5" name="__codelineno-28-5"></a><span class="cm"> */</span>
 <a id="__codelineno-28-6" name="__codelineno-28-6"></a><span class="n">params</span><span class="o">.</span><span class="na">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;greetings.csv&#39;</span>
 <a id="__codelineno-28-7" name="__codelineno-28-7"></a><span class="n">params</span><span class="o">.</span><span class="na">batch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;test-batch&#39;</span>
-</code></pre></div></td></tr></table></div>
-<p><em>After:</em></p>
+<a id="__codelineno-28-8" name="__codelineno-28-8"></a><span class="hll"><span class="n">params</span><span class="o">.</span><span class="na">character</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;turkey&#39;</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hello-containers.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-3">3</a></span>
 <span class="normal"><a href="#__codelineno-29-4">4</a></span>
 <span class="normal"><a href="#__codelineno-29-5">5</a></span>
 <span class="normal"><a href="#__codelineno-29-6">6</a></span>
-<span class="normal"><a href="#__codelineno-29-7">7</a></span>
-<span class="normal"><a href="#__codelineno-29-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="cm">/*</span>
+<span class="normal"><a href="#__codelineno-29-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="cm">/*</span>
 <a id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="cm"> * Pipeline parameters</span>
 <a id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="cm"> */</span>
 <a id="__codelineno-29-6" name="__codelineno-29-6"></a><span class="n">params</span><span class="o">.</span><span class="na">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;greetings.csv&#39;</span>
 <a id="__codelineno-29-7" name="__codelineno-29-7"></a><span class="n">params</span><span class="o">.</span><span class="na">batch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;test-batch&#39;</span>
-<a id="__codelineno-29-8" name="__codelineno-29-8"></a><span class="n">params</span><span class="o">.</span><span class="na">character</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;turkey&#39;</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p>That should be all we need to make this work.</p>
 <h4 id="224-run-the-workflow-to-verify-that-it-works">2.2.4. Run the workflow to verify that it works<a class="headerlink" href="#224-run-the-workflow-to-verify-that-it-works" title="Permanent link">&para;</a></h4>
 <p>Run this with the <code>-resume</code> flag.</p>
@@ -3467,34 +3517,46 @@ This means that you can use any container image you like to run your processes, 
 <p>We need to specify a container and tell Nextflow to use it for the <code>cowpy()</code> process.</p>
 <h4 id="231-specify-a-container-for-the-cowpy-process-to-use">2.3.1. Specify a container for the <code>cowpy</code> process to use<a class="headerlink" href="#231-specify-a-container-for-the-cowpy-process-to-use" title="Permanent link">&para;</a></h4>
 <p>Edit the <code>cowpy.nf</code> module to add the <code>container</code> directive to the process definition as follows:</p>
-<p><em>Before:</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">After</label><label for="__tabbed_4_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">modules/cowpy.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-4">4</a></span>
 <span class="normal"><a href="#__codelineno-32-5">5</a></span>
-<span class="normal"><a href="#__codelineno-32-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-32-4" name="__codelineno-32-4"></a><span class="n">process</span><span class="w"> </span><span class="n">cowpy</span><span class="w"> </span><span class="o">{</span>
+<span class="normal"><a href="#__codelineno-32-6">6</a></span>
+<span class="normal"><a href="#__codelineno-32-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-32-4" name="__codelineno-32-4"></a><span class="n">process</span><span class="w"> </span><span class="n">cowpy</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-32-5" name="__codelineno-32-5"></a>
 <a id="__codelineno-32-6" name="__codelineno-32-6"></a><span class="w">    </span><span class="n">publishDir</span><span class="w"> </span><span class="s1">&#39;containers/results&#39;</span><span class="o">,</span><span class="w"> </span><span class="nl">mode:</span><span class="w"> </span><span class="s1">&#39;copy&#39;</span>
-</code></pre></div></td></tr></table></div>
-<p><em>After:</em></p>
+<a id="__codelineno-32-7" name="__codelineno-32-7"></a><span class="hll"><span class="w">    </span><span class="n">container</span><span class="w"> </span><span class="s1">&#39;community.wave.seqera.io/library/cowpy:1.1.5--3db457ae1977a273&#39;</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">modules/cowpy.nf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-4">4</a></span>
 <span class="normal"><a href="#__codelineno-33-5">5</a></span>
-<span class="normal"><a href="#__codelineno-33-6">6</a></span>
-<span class="normal"><a href="#__codelineno-33-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-33-4" name="__codelineno-33-4"></a><span class="n">process</span><span class="w"> </span><span class="n">cowpy</span><span class="w"> </span><span class="o">{</span>
+<span class="normal"><a href="#__codelineno-33-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-33-4" name="__codelineno-33-4"></a><span class="n">process</span><span class="w"> </span><span class="n">cowpy</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-33-5" name="__codelineno-33-5"></a>
 <a id="__codelineno-33-6" name="__codelineno-33-6"></a><span class="w">    </span><span class="n">publishDir</span><span class="w"> </span><span class="s1">&#39;containers/results&#39;</span><span class="o">,</span><span class="w"> </span><span class="nl">mode:</span><span class="w"> </span><span class="s1">&#39;copy&#39;</span>
-<a id="__codelineno-33-7" name="__codelineno-33-7"></a><span class="w">    </span><span class="n">container</span><span class="w"> </span><span class="s1">&#39;community.wave.seqera.io/library/cowpy:1.1.5--3db457ae1977a273&#39;</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p>This tells Nextflow that if the use of Docker is enabled, it should use the container image specified here to execute the process.</p>
 <h4 id="232-enable-use-of-docker-via-the-nextflowconfig-file">2.3.2. Enable use of Docker via the <code>nextflow.config</code> file<a class="headerlink" href="#232-enable-use-of-docker-via-the-nextflowconfig-file" title="Permanent link">&para;</a></h4>
 <p>Here we are going to slightly anticipate the topic of the next and last part of this course (Part 6), which covers configuration.</p>
 <p>One of the main ways Nextflow offers for configuring workflow execution is to use a <code>nextflow.config</code> file. When such a file is present in the current directory, Nextflow will automatically load it in and apply any configuration it contains.</p>
 <p>We provided a <code>nextflow.config</code> file with a single line of code that disables Docker: <code>docker.enabled = false</code>.</p>
 <p>Now, let's switch that to <code>true</code> to enable Docker:</p>
-<p><em>Before:</em></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a><span class="go">docker.enabled = false</span>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">After</label><label for="__tabbed_5_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a><span class="hll"><span class="go">docker.enabled = true</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="go">docker.enabled = false</span>
 </code></pre></div></td></tr></table></div>
-<p><em>After:</em></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">nextflow.config</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="go">docker.enabled = true</span>
-</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is possible to enable Docker execution from the command-line, on a per-run basis, using the <code>-with-docker &lt;container&gt;</code> parameter.
